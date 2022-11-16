@@ -32,7 +32,7 @@ function predict() {
     var i1=document.getElementById("i1").value;
     var i2=document.getElementById("i2").value;
     var i3=document.getElementById("i3").value;
-    var i4=document.getElementById("i4").value;
+    var i4=document.getElementById("i4").value/100;
     var i5=document.getElementById("i5").value;
 
     // output
@@ -46,7 +46,6 @@ function predict() {
 
     if (y1>=0.5) {
 
-      y1=1;
 
       document.getElementById("pred1").innerHTML="Masa en seno izquierdo: SI";
 
@@ -54,7 +53,6 @@ function predict() {
 
     else {
 
-      y1=0;
 
       document.getElementById("pred1").innerHTML="Masa en seno izquierdo: NO";
 
@@ -64,7 +62,6 @@ function predict() {
 
     if (y2>=0.5) {
 
-      y2=1;
 
       document.getElementById("pred2").innerHTML="Masa en seno derecho: SI";
 
@@ -72,7 +69,6 @@ function predict() {
 
     else {
 
-      y2=0;
 
       document.getElementById("pred2").innerHTML="Masa en seno derecho: NO";
 
