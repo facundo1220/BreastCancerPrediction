@@ -1,0 +1,157 @@
+
+<!doctype html>
+<html>
+
+  <head>
+
+    <title>Login</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link href="./styles/style.css" rel="stylesheet">
+    <script src="./scripts/Prediction_model2.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body class="text-center">
+
+    <main class="form-signin w-100 m-auto">
+
+      <form onsubmit="return false" name="index" method="post">
+
+        <img class="mb-4" src="./images/cinta.png" alt="" width="90" height="70">
+
+        <h1 class="h1 mb-3 fw-normal" id="sig">M&eacute;todo seg&uacute;n factores de riesgo</h1>
+
+        <br>
+
+        <div class="form-floating">
+
+          <h3 class="h3 mb-3 fw-normal">Edad<h3>
+
+          <input type="number" class="form-control text-center"  id="i1" placeholder="Entrada 1" required>
+
+        </div>
+
+        <div class="form-floating">
+
+          <h3 class="h3 mb-3 fw-normal">IMC<h3>
+
+          <input type="number" class="form-control text-center"  id="i2" placeholder="Entrada 2" required>
+
+        </div>
+
+        <div class="form-floating">
+
+          <h3 class="h3 mb-3 fw-normal">Glucosa en sangre (mg/dL)<h3>
+
+          <input type="number" class="form-control text-center"  id="i3" placeholder="Entrada 3" required>
+
+        </div>
+
+        <div class="form-floating">
+
+          <h3 class="h3 mb-3 fw-normal">Insulina basal (u/mL)<h3>
+
+          <input type="number" class="form-control text-center"  id="i4" placeholder="Entrada 4" required>
+
+        </div>
+
+        <div class="form-floating">
+
+          <h3 class="h3 mb-3 fw-normal">HOMA<h3>
+
+          <input type="number" class="form-control text-center"  id="i5" placeholder="Entrada 5" required>
+
+        </div>
+
+        <div class="form-floating">
+
+          <h3 class="h3 mb-3 fw-normal">Leptina (ng/mL)<h3>
+
+          <input type="number" class="form-control text-center"  id="i6" placeholder="Entrada 6" required>
+
+        </div>
+
+        <div class="form-floating">
+
+          <h3 class="h3 mb-3 fw-normal">Adiponectina (ug/mL)<h3>
+
+          <input type="number" class="form-control text-center"  id="i7" placeholder="Entrada 7" required>
+
+        </div>
+
+        <div class="form-floating">
+
+          <h3 class="h3 mb-3 fw-normal">Resistina (ng/mL)<h3>
+
+          <input type="number" class="form-control text-center"  id="i8" placeholder="Entrada 8" required>
+
+        </div>
+
+        <div class="form-floating">
+
+          <h3 class="h3 mb-3 fw-normal">MPC 1 (pg/mL)<h3>
+
+          <input type="number" class="form-control text-center"  id="i9" placeholder="Entrada 9" required>
+
+        </div>
+
+        <br>
+
+        <div class="row" role="toolbar" aria-label="Toolbar with button groups">
+
+          <div class="col" role="group" aria-label="Second group">
+
+            <a href="index.html"><button type="button" class="w-100 btn btn-lg btn-primary bg-primary">Volver</button></a>
+
+          </div>
+
+          <div class="col" role="group" aria-label="Third group">
+
+            <button class="w-100 btn btn-lg btn-primary bg-primary" data-toggle="modal" data-target="#modal" onclick="predict2();">Predicci&oacute;n</button>
+
+          </div>
+
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+
+                <h5 class="modal-title">Predicci&oacute;n</h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+
+              </div>
+
+              <div class="modal-body">
+
+                <p id="pred1"></p>
+
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+    </main>
+
+  </body>
+
+</html>
