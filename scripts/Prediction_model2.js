@@ -1,9 +1,6 @@
 
 function predict2() {
 
-  alert("Llene correctamente los campos requeridos");
-
-
   if (document.getElementById("i1").value=="" || document.getElementById("i2").value=="" || document.getElementById("i3").value=="" || document.getElementById("i4").value=="" || document.getElementById("i5").value=="" || document.getElementById("i6").value=="" || document.getElementById("i7").value=="" || document.getElementById("i8").value=="" || document.getElementById("i9").value=="") {
 
     alert("Llene correctamente los campos requeridos");
